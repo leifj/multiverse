@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-apt-get -qq update
-apt-get -qq -y autoremove
+export DEBIAN_FRONTEND='noninteractive'
+
+if (( $RANDOM % 20 == 0)); then
+    apt-get -qq update
+    apt-get -qq -y autoremove
+fi
